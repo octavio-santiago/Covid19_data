@@ -10,9 +10,11 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 # Total population, N.
-N = 20000000
+#N = 6000000
+E = 0.009
+N = 60000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
-I0, R0 = 151, 0
+I0, R0 = 157, 0
 # Everyone else, S0, is susceptible to infection initially.
 S0 = N - I0 - R0
 
@@ -25,7 +27,7 @@ def deriv(y, t, N, beta, gamma):
     return dSdt, dIdt, dRdt
 
 
-res = [151,200,234,346,529,640,970,1178,1546,1891,2201,2433,2915,3417,3904,4256,4579,5717,6836,7910]
+res = [157,239,323,470,655,889,1128,1701,2036,2502,3089,3858,4636,5883,7375,9172,10149,12462,15113,17660,21157,24747,27980,31506,35713,41035,47021,53578,59138,63927,69176,74386,80589,86498,92472,97689,101739,105792,110574,115242]
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
 # Initial conditions vector
@@ -59,7 +61,7 @@ spike = list(I).index(max(I))
 spike_val = max(I)
 print('O pico será em: ', spike - len(res), " dias")
 print('Com aproximadamene ', round(spike_val,0), " infectados notificados")
-print('E aproximadamene ', 0.04 * round(spike_val,0), " mortos")
+print('E aproximadamene ', 0.1 * round(spike_val,0), " mortos")
 # Plot the data on three separate curves for S(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
