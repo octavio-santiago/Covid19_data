@@ -10,7 +10,9 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 # Total population, N.
-N = 32700000
+#N = 32700000
+E = 0.006
+N = 327000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 100, 0
 # Everyone else, S0, is susceptible to infection initially.
@@ -35,7 +37,7 @@ y0 = S0, I0, R0
 def calculate(res,t,y0):
     erro_min = 100000000
     x_min = 2.
-    for x in np.arange(2., 6., 0.1):
+    for x in np.arange(2., 6., 0.01):
         # Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
         beta, gamma = 0.2, 1./10 
         beta, gamma = 1./6.5, 1./14 
@@ -60,6 +62,7 @@ spike_val = max(I)
 print('O pico será em: ', spike - len(res), " dias")
 print('Com aproximadamene ', round(spike_val,0), " infectados notificados")
 print('E aproximadamene ', 0.02 * round(spike_val,0), " mortos")
+print('Com um erro de : ', erro_min , ", ", (erro_min / max(res))*100, " %")
 
 # Plot the data on three separate curves for S(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
@@ -126,7 +129,7 @@ for i in range(5,len(res),5):
     if i >= (len(res)-5):
         plt.plot(t, I,'b', alpha=1, lw=2, label='Predicted cases')
     else:
-        plt.plot(t, I,'r',alpha=0.5, lw=2, label='Predicted cases')
+        plt.plot(t, I,'r',alpha=0.05, lw=2, label='Predicted cases')
 
 plt.show()
 '''

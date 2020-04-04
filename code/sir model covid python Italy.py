@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Total population, N.
 #N = 6000000
-E = 0.009
+E = 0.012
 N = 60000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 157, 0
@@ -62,6 +62,7 @@ spike_val = max(I)
 print('O pico será em: ', spike - len(res), " dias")
 print('Com aproximadamene ', round(spike_val,0), " infectados notificados")
 print('E aproximadamene ', 0.1 * round(spike_val,0), " mortos")
+print('Com um erro de : ', erro_min , ", ", (erro_min / max(res))*100, " %")
 # Plot the data on three separate curves for S(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
