@@ -8,9 +8,11 @@ Created on Thu Mar 26 20:12:23 2020
 import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
+from dateutil.relativedelta import relativedelta
+import datetime
 
 # Total population, N.
-N = 20000000
+N = 20000000 * 0.1
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 151, 0
 # Everyone else, S0, is susceptible to infection initially.
@@ -24,8 +26,12 @@ def deriv(y, t, N, beta, gamma):
     dRdt = gamma * I
     return dSdt, dIdt, dRdt
 
+df = pd.read_excel(r'C:\Users\braeued1\Documents\Octavio\projetos\Covid19_data\dataset\dataset_infec.xlsx')
+df = df[df['country'] == 'brazil']
+df['actives'] = df['infec'] - df['deaths'] - df['recovered']
+res = list(df['actives'])
 
-res = [151,200,234,346,529,640,970,1178,1546,1891,2201,2433,2915,3417,3904,4256,4579,5717,6836,7910,9056]
+#res = [151,200,234,346,529,640,970,1178,1546,1891,2201,2433,2915,3417,3904,4256,4579,5717,6836,7910,9056,10278]
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
 # Initial conditions vector
@@ -57,9 +63,11 @@ S,I,R,x_min,erro_min = calculate(res,t,y0,g)
 R0 = (1/x_min) / (1/g)
 spike = list(I).index(max(I))
 spike_val = max(I)
-print('O pico será em: ', spike - len(res), " dias")
+date_diff = (spike - len(res))
+print('O pico será em: ', date_diff, " dias ", "em ", datetime.date.today() + relativedelta(days=+date_diff))
 print('Com aproximadamene ', round(spike_val,0), " infectados notificados")
 print('E aproximadamene ', 0.04 * round(spike_val,0), " mortos")
+print('Com um erro de : ', erro_min , ", ", (erro_min / max(res))*100, " %")
 # Plot the data on three separate curves for S(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)

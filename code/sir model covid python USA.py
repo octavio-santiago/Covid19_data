@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Total population, N.
 #N = 32700000
-E = 0.006
+E = 0.003
 N = 327000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 100, 0
@@ -27,8 +27,12 @@ def deriv(y, t, N, beta, gamma):
     return dSdt, dIdt, dRdt
 
 
-res = [100,124,158,221,319,435,541,704,994,1301,1697,2247,2943,3680,4663,6411,9259,13789,19383,
-       24207,33546,42751,54881,64775,82179,103729,120529,142460,160344,184487,211143,240375]
+#res = [100,124,158,221,319,435,541,704,994,1301,1697,2247,2943,3680,4663,6411,9259,13789,19383,
+#       24207,33546,42751,54881,64775,82179,103729,120529,142460,160344,184487,211143,240375]
+df = pd.read_excel(r'C:\Users\braeued1\Documents\Octavio\projetos\Covid19_data\dataset\dataset_infec.xlsx')
+df = df[df['country'] == 'usa']
+df['actives'] = df['infec'] - df['deaths']
+res = list(df['actives'])
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
 # Initial conditions vector
@@ -121,7 +125,7 @@ errors = []
 x_mins = []
 res_y = res.copy()
 for i in range(5,len(res),5):
-    print(res_y[0:i])
+    #print(res_y[0:i])
     S,I,R,x_min,erro_min = calculate(res_y[0:i],t,y0)
     cases.append(I)
     errors.append(erro_min)
