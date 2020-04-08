@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Total population, N.
 #N = 6000000
-E = 0.011
+E = 0.01
 N = 60000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 157, 0
@@ -28,7 +28,8 @@ def deriv(y, t, N, beta, gamma):
 
 df = pd.read_excel(r'C:\Users\braeued1\Documents\Octavio\projetos\Covid19_data\dataset\dataset_infec.xlsx')
 df = df[df['country'] == 'italy']
-res = list(df['infec'])
+df['actives'] = df['infec'] - df['deaths']
+res = list(df['actives'])
 #res = [157,239,323,470,655,889,1128,1701,2036,2502,3089,3858,4636,5883,7375,9172,10149,12462,15113,17660,21157,24747,27980,31506,35713,41035,47021,53578,59138,63927,69176,74386,80589,86498,92472,97689,101739,105792,110574,115242]
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
