@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Total population, N.
 #N = 32700000
-E = 0.003
+E = 0.005
 N = 327000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 100, 0
