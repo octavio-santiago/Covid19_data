@@ -12,7 +12,7 @@ from dateutil.relativedelta import relativedelta
 import datetime
 
 # Total population, N.
-N = 20000000 * 0.005
+N = 20000000 * 0.05
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 151, 0
 # Everyone else, S0, is susceptible to infection initially.
