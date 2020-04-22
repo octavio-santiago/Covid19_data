@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # Total population, N.
 #N = 32700000
-E = 0.005
+E = 0.019
 N = 327000000 * E
 # Initial number of infected and recovered individuals, I0 and R0.
 I0, R0 = 100, 0
@@ -37,15 +37,15 @@ res = list(df['actives'])
 t = np.linspace(0, 160, 160)
 # Initial conditions vector
 y0 = S0, I0, R0
-
+g = 6.5
 def calculate(res,t,y0):
     erro_min = 100000000
     x_min = 2.
     for x in np.arange(2., 6., 0.01):
         # Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
         beta, gamma = 0.2, 1./10 
-        beta, gamma = 1./6.5, 1./14 
-        beta, gamma = 1./x, 1./14 
+        beta, gamma = 1./6.5, 1./g
+        beta, gamma = 1./x, 1./g
         # Integrate the SIR equations over the time grid, t.
         ret = odeint(deriv, y0, t, args=(N, beta, gamma))
         S, I, R = ret.T
@@ -54,7 +54,7 @@ def calculate(res,t,y0):
             erro_min = erro
             x_min = x
     
-    beta, gamma = 1./x_min, 1./14
+    beta, gamma = 1./x_min, 1./g
     # Integrate the SIR equations over the time grid, t.
     ret = odeint(deriv, y0, t, args=(N, beta, gamma))
     S, I, R = ret.T
