@@ -112,6 +112,9 @@ cases = []
 errors = []
 x_mins = []
 R0s = []
+from celluloid import Camera
+fig = plt.figure()
+camera = Camera(fig)
 for i in range(5,len(res),2):
     res_y = res.copy()
     #print(res_y[0:i])
@@ -126,7 +129,11 @@ for i in range(5,len(res),2):
     
     #plt.plot(t, I,alpha=0.5, lw=2, label='Predicted cases')
     plt.plot(t, I,'r',alpha=0.05, lw=2, label='Predicted cases')
-        
+    camera.snap()
+    
+animation = camera.animate()
+animation.save(r'C:\Users\braeued1\Documents\Octavio\projetos\Covid19_data\dataset\animation.gif')
+      
 S,I,R,x_min,erro_min = calculate(res,t,y0,g)  
 plt.plot(t, I,'b', alpha=1, lw=2, label='Predicted cases')    
 #literatura

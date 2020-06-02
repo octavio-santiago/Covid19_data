@@ -1,0 +1,166 @@
+2020-06-01 14:21:19,606 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST(SERVERPROPERTY('ProductVersion') AS VARCHAR)
+2020-06-01 14:21:19,606 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:19,744 - sqlalchemy.engine.base.Engine - INFO - SELECT schema_name()
+2020-06-01 14:21:19,744 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:20,018 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-06-01 14:21:20,018 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:20,151 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test unicode returns' AS NVARCHAR(60)) AS anon_1
+2020-06-01 14:21:20,152 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:20,417 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 14:21:20,417 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:30,772 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Nome Fil Responsável 1o. Reporte]
+          ,[Nome Fil Emitente]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 14:21:30,773 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:21:41,347 - sqlalchemy.engine.base.Engine - INFO -  SELECT * FROM [dbo].[CAR_MARGEM_PCT_PRECO] 
+2020-06-01 14:21:41,347 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:23:10,476 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 14:23:10,476 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:23:23,852 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Nome Fil Responsável 1o. Reporte]
+          ,[Nome Fil Emitente]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 14:23:23,852 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 14:23:45,435 - sqlalchemy.engine.base.Engine - INFO -  SELECT * FROM [dbo].[CAR_MARGEM_PCT_PRECO] 
+2020-06-01 14:23:45,435 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:17:32,521 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:17:32,523 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:17:49,994 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Nome Fil Responsável 1o. Reporte]
+          ,[Nome Fil Emitente]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:17:49,995 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:18:00,455 - sqlalchemy.engine.base.Engine - INFO -  SELECT * FROM [dbo].[CAR_MARGEM_PCT_PRECO] 
+2020-06-01 15:18:00,455 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:33:00,676 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:33:00,686 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:33:12,254 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Nome Fil Responsável 1o. Reporte]
+          ,[Nome Fil Emitente]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:33:12,257 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:33:27,490 - sqlalchemy.engine.base.Engine - INFO -  SELECT * FROM [dbo].[CAR_MARGEM_PCT_PRECO] 
+2020-06-01 15:33:27,490 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:42:41,721 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST(SERVERPROPERTY('ProductVersion') AS VARCHAR)
+2020-06-01 15:42:41,722 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:42:42,240 - sqlalchemy.engine.base.Engine - INFO - SELECT schema_name()
+2020-06-01 15:42:42,240 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:42:42,581 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-06-01 15:42:42,581 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:42:42,848 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test unicode returns' AS NVARCHAR(60)) AS anon_1
+2020-06-01 15:42:42,848 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:42:43,245 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:42:43,245 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:04,325 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST(SERVERPROPERTY('ProductVersion') AS VARCHAR)
+2020-06-01 15:47:04,325 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:04,479 - sqlalchemy.engine.base.Engine - INFO - SELECT schema_name()
+2020-06-01 15:47:04,479 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:04,860 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-06-01 15:47:04,861 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:05,099 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test unicode returns' AS NVARCHAR(60)) AS anon_1
+2020-06-01 15:47:05,099 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:05,435 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Venda Liq]
+          ,[Volume]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:47:05,435 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:10,483 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST([Ano/Mês Ref] as date) [Ano/Mês Ref]
+          ,[Cod Cli]
+          ,[Cnpj Cliente]
+          ,[Descrição Sub-Grupo Atual]
+          ,[Nome Família Prod]
+          ,[Nome Linha Prod]
+          ,[Nome Fil Responsável 1o. Reporte]
+          ,[Nome Fil Emitente]
+      FROM [DIGITAL].[dbo].CAR_TABLEAU_VIEW_BASE
+      where CAST([Ano/Mês Ref] as date) >= DATEADD(Month, -4, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+            and CAST([Ano/Mês Ref] as date) < DATEADD(Month, 0, DateAdd(Month, DateDiff(Month, 0, GetDate()), 0))
+2020-06-01 15:47:10,484 - sqlalchemy.engine.base.Engine - INFO - ()
+2020-06-01 15:47:16,311 - sqlalchemy.engine.base.Engine - INFO -  SELECT * FROM [dbo].[CAR_MARGEM_PCT_PRECO] 
+2020-06-01 15:47:16,311 - sqlalchemy.engine.base.Engine - INFO - ()
